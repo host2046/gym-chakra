@@ -1,5 +1,12 @@
+import Benefits from "../components/Main/Benefits";
+import { Box } from "@chakra-ui/react";
+
 const BenefitsPage = () => {
-  return <div>BenefitsPage</div>;
+  return (
+    <Box margin={10}>
+      <Benefits />
+    </Box>
+  );
 };
 
 export default BenefitsPage;
