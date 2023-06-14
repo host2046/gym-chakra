@@ -40,7 +40,7 @@ const GymAnimate = () => {
         width="100px"
         height="100px"
       >
-        <Link to="/contactus"> Start Now</Link>
+        <Link to="/contactus">TRY NOW</Link>
       </ChakraBox>
     </Container>
   );

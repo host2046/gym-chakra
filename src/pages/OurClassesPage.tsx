@@ -1,5 +1,7 @@
+import OurClasses from "../components/Main/OurClasses";
+
 const OurClassesPage = () => {
-  return <div>OurClassesPage</div>;
+  return <OurClasses />;
 };
 
 export default OurClassesPage;

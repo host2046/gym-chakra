@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 
 const BenefitsPage = () => {
   return (
-    <Box margin={10}>
+    <Box>
       <Benefits />
     </Box>
   );

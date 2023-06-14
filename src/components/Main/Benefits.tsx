@@ -10,6 +10,7 @@ import {
 import ExpendableText from "../../UI/ExpandableText";
 import BenefitsPageGraphic from "../../assets/BenefitsPageGraphic.png";
 import { Link } from "react-router-dom";
+import abtractwaves from "../../assets/AbstractWaves.png";
 import {
   HomeModernIcon,
   UserGroupIcon,
@@ -75,6 +76,7 @@ const Benefits = () => {
           <Image src={BenefitsPageGraphic} />
         </Box>
         <Box>
+          <Image src={abtractwaves} />
           <Heading marginTop={5} color="pink.600">
             MILIONS OF HAPPY MEMEBERS GETTING{" "}
             <span style={{ color: "purple" }}>FIT</span>

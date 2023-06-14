@@ -29,7 +29,7 @@ const Home = () => {
           }}
         >
           <Image src={HomePageText} />
-          <Text>
+          <Text marginY={5}>
             Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
             Studios to get the Body Shapes That you Dream of.. Get Your Dream
             Body Now.
