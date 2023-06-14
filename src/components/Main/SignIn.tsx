@@ -1,84 +1,48 @@
-import { Formik, Field } from "formik";
+import { Box, Flex, InputGroup, Input, Button } from "@chakra-ui/react";
+import { FormEvent, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Input,
-  VStack,
-} from "@chakra-ui/react";
 
-export default function SignIn() {
+const SignIn = () => {
   const navigate = useNavigate();
+
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passRef = useRef<HTMLInputElement>(null);
+  const sumbitHandler = (e: FormEvent) => {
+    e.preventDefault();
+    const enteredemail = emailRef.current!.value;
+    const enteredPass = passRef.current!.value;
+    const fromIsValid =
+      enteredemail.includes("@") && enteredPass.trim().length > 6;
+    if (!fromIsValid) {
+      alert("please entere valid inputs");
+    } else {
+      navigate("/benefits");
+    }
+  };
   return (
-    <Flex bg="gray.100" align="center" justify="center" h="100vh">
-      <Box bg="gray.200" p={6} rounded="md" w={64}>
-        <Formik
-          initialValues={{
-            email: "",
-            password: "",
-            rememberMe: false,
-          }}
-          onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
-          }}
-        >
-          {({ handleSubmit, errors, touched }) => (
-            <form onSubmit={handleSubmit}>
-              <VStack spacing={4} align="flex-start">
-                <FormControl>
-                  <FormLabel htmlFor="email">Email Address</FormLabel>
-                  <Field
-                    as={Input}
-                    borderColor="gray.500"
-                    id="email"
-                    name="email"
-                    type="email"
-                    variant="filled"
-                  />
-                </FormControl>
-                <FormControl isInvalid={!!errors.password && touched.password}>
-                  <FormLabel htmlFor="password">Password</FormLabel>
-                  <Field
-                    as={Input}
-                    borderColor="gray.500"
-                    id="password"
-                    name="password"
-                    type="password"
-                    variant="filled"
-                    validate={(value: any) => {
-                      let error;
-
-                      if (value.length < 6) {
-                        error = "Password must contain at least 6 characters";
-                      }
-
-                      return error;
-                    }}
-                  />
-                  <FormErrorMessage>{errors.password}</FormErrorMessage>
-                </FormControl>
-                <Field
-                  as={Checkbox}
-                  id="rememberMe"
-                  name="rememberMe"
-                  colorScheme="blue"
-                  borderColor="gray.500"
-                >
-                  Remember me?
-                </Field>
-                <Button type="submit" colorScheme="pink" width="full">
-                  Login
-                </Button>
-              </VStack>
-            </form>
-          )}
-        </Formik>
+    <Flex marginTop={5} align="center" justify="center" h="400px">
+      <Box p={6} rounded="md" w="30%">
+        <form onSubmit={sumbitHandler}>
+          <InputGroup marginY={2}>
+            <Input ref={emailRef} placeholder="Email" borderRadius={20} />
+          </InputGroup>
+          <InputGroup marginY={2}>
+            <Input ref={passRef} placeholder="Password" borderRadius={20} />
+          </InputGroup>
+          <Button
+            marginTop={2}
+            paddingX={5}
+            borderRadius={20}
+            _hover={{ color: "green", bg: "orange" }}
+            colorScheme="yellow"
+            type="submit"
+          >
+            SIGN IN
+          </Button>
+        </form>
       </Box>
     </Flex>
   );
-}
+};
+
+export default SignIn;

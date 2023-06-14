@@ -25,7 +25,7 @@ const ContactForm = () => {
     navigate("/");
   };
   return (
-    <Flex marginTop={5} bg="gray.200" align="center" justify="center" h="100vh">
+    <Flex marginTop={5} bg="gray.200" align="center" justify="center" h="400px">
       <Box bg="gray.300" p={6} rounded="md" w="30%">
         <form onSubmit={submitHandler}>
           <InputGroup borderColor="gray.700" marginY={2}>
