@@ -1,6 +1,8 @@
 import { Box, Flex, InputGroup, Input, Button } from "@chakra-ui/react";
 import { FormEvent, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import GymAnimate from "./GymAnimate";
+import ActionButton from "../../UI/ActionButton";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -20,28 +22,28 @@ const SignIn = () => {
     }
   };
   return (
-    <Flex marginTop={5} align="center" justify="center" h="400px">
-      <Box p={6} rounded="md" w="30%">
-        <form onSubmit={sumbitHandler}>
-          <InputGroup marginY={2}>
-            <Input ref={emailRef} placeholder="Email" borderRadius={20} />
-          </InputGroup>
-          <InputGroup marginY={2}>
-            <Input ref={passRef} placeholder="Password" borderRadius={20} />
-          </InputGroup>
-          <Button
-            marginTop={2}
-            paddingX={5}
-            borderRadius={20}
-            _hover={{ color: "green", bg: "orange" }}
-            colorScheme="yellow"
-            type="submit"
-          >
-            SIGN IN
-          </Button>
-        </form>
-      </Box>
-    </Flex>
+    <>
+      <GymAnimate />
+      <Flex
+        marginTop={5}
+        align="center"
+        justify="center"
+        width="full"
+        h="400px"
+      >
+        <Box p={6} rounded="md" w="100%">
+          <form onSubmit={sumbitHandler}>
+            <InputGroup marginY={2}>
+              <Input ref={emailRef} placeholder="Email" borderRadius={20} />
+            </InputGroup>
+            <InputGroup marginY={2}>
+              <Input ref={passRef} placeholder="Password" borderRadius={20} />
+            </InputGroup>
+            <ActionButton>SIGN IN</ActionButton>
+          </form>
+        </Box>
+      </Flex>
+    </>
   );
 };
 

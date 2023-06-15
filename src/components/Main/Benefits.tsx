@@ -20,6 +20,7 @@ import { Benefitstype } from "../../type";
 import Benefit from "./Benefit";
 import Sparkles from "../../assets/Sparkles.png";
 import GymAnimate from "./GymAnimate";
+import HText from "../../UI/HText";
 const benefits: Benefitstype[] = [
   {
     icon: <HomeModernIcon className="h-6 w-6" />,
@@ -43,9 +44,7 @@ const benefits: Benefitstype[] = [
 const Benefits = () => {
   return (
     <>
-      <Heading marginY={5} color="pink.600">
-        MORE THAN JUST A GYM
-      </Heading>
+      <HText>MORE THAN JUST A GYM</HText>
       <ExpendableText>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem tempore
         laudantium quibusdam dicta eveniet labore voluptatum tenetur optio
@@ -70,17 +69,17 @@ const Benefits = () => {
           />
         ))}
       </SimpleGrid>
-      <GymAnimate />
+
       <SimpleGrid marginTop={10} columns={{ base: 1, md: 2 }}>
         <Box>
           <Image src={BenefitsPageGraphic} />
         </Box>
         <Box>
           <Image src={abtractwaves} />
-          <Heading marginTop={5} color="pink.600">
+          <HText>
             MILIONS OF HAPPY MEMEBERS GETTING{" "}
             <span style={{ color: "purple" }}>FIT</span>
-          </Heading>
+          </HText>
           <Text marginY={8}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
             facilis sunt vitae iure molestias fuga nisi, praesentium

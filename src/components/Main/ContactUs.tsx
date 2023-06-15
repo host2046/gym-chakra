@@ -1,12 +1,13 @@
-import { Heading, Text } from "@chakra-ui/react";
-
+import { Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
 import ContactForm from "./ContactForm";
+import HText from "../../UI/HText";
 const ContactUs = () => {
   return (
     <>
-      <Heading marginY={5} color="pink.600">
+      <HText>
         <span style={{ color: "purple" }}>JOIN NOW</span> TO GET IN SHAPE
-      </Heading>
+      </HText>
       <Text>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
         similique velit, quaerat delectus expedita quis eveniet laudantium,
@@ -15,7 +16,10 @@ const ContactUs = () => {
         dolorem, consectetur, repellat officia. Molestiae numquam praesentium,
         quo ipsam suscipit ea deleniti. Non, quas.
       </Text>
-      <ContactForm />
+      <SimpleGrid spacing={3} columns={{ base: 1, md: 2 }}>
+        <ContactForm />
+        <Image src={ContactUsPageGraphic} />
+      </SimpleGrid>
     </>
   );
 };
